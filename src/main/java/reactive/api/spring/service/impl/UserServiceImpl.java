@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
         long startTime=System.currentTimeMillis();
         final List<User> users=userRepository.getAllUsers();
         long endTime=System.currentTimeMillis();
-        log.info("Total execution time - "+(endTime-startTime)+" ms");
+        log.info("Total normal Rest execution time - "+(endTime-startTime)+" ms");
         return users;
     }
 
@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
         long startTime=System.currentTimeMillis();
         final Flux<User> users=userRepository.getAllUsersWithStream();
         long endTime=System.currentTimeMillis();
-        log.info("Total execution time - "+(endTime-startTime)+" ms");
+        log.info("Total Flux execution time - "+(endTime-startTime)+" ms");
         return users;
     }
 
