@@ -38,4 +38,13 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(userService.getAllUsersWithStream());
     }
+
+
+    @GetMapping(value = "/reactor",produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public ResponseEntity<?> getAllWithFlux(){
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(userService.getUsersWithSSEStream());
+    }
+
+
 }
